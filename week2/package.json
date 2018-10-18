@@ -1,0 +1,17 @@
+{
+  "name": "week2",
+  "version": "1.0.0",
+  "description": "experimentingWIthNodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Hello World\"",
+    "start": "node server.js"
+  },
+  "author": "Andrei Vasile",
+  "license": "ISC",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0"
+  }
+}
