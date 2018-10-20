@@ -5,8 +5,8 @@ node_js:
 
 sudo: false
 
-before_script:
-  - npm install jest
+# before_script:
+#   - npm install jest
 
 script:
   - echo "Hello Travis"
