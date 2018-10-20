@@ -8,5 +8,11 @@ sudo: false
 # before_script:
 #   - npm install jest
 
+install:
+  - npm install -g codecov
 script:
-  - echo "Hello Travis"
+  - istanbul cover ./node_modules/mocha/bin/_mocha --reporter lcovonly -- -R spec
+  - codecov
+
+# script:
+#   - echo "Hello Travis"
