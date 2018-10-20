@@ -8,11 +8,5 @@ sudo: false
 before_script:
   - npm install jest
 
-cache:
-  yarn: true
-  directories:
-    - '.eslintcache'
-    - 'node_modules'
-
 script:
-- npm run test
+  - echo "Hello Travis"
