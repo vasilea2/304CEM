@@ -4,13 +4,20 @@
   "description": "experimentingWIthNodeJS",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Hello World\"",
-    "start": "node server.js"
+    "test": "jest --coverage",
+    "watch": "node_modules/.bin/jest --coverage --watchAll"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
   },
   "author": "Andrei Vasile",
   "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "jest": "^23.6.0"
+  },
   "dependencies": {
-    "body-parse": "^0.1.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "express-handlebars": "^3.0.0",
