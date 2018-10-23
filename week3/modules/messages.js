@@ -12,10 +12,10 @@ exports.add = function(conData, req, callback) {
         }
         //if no error prepare our user object with the values sent by the client
         let message = {
-            name: req.body['formName'],
-            email: req.body['formEmail'],
-            url: req.body['formSite'],
-            message: req.body['formMessage']
+            name: req.body['name'],
+            email: req.body['email'],
+            url: req.body['url'],
+            message: req.body['message']
         }
         if (req.body['id'] !== undefined && req.body['id'] !== '') {
             message['id'] = req.body['id']
@@ -60,7 +60,7 @@ exports.deleteById = function(conData, req, callback) {
             callback(err)
             return
         }
-        data.query('DELETE FROM Messages WHERE id = ' + req.params.id, function (err, result) {
+        data.query(`DELETE FROM Messages WHERE id = ${req.params.id}`, function (err, result) {
             let data = JSON.stringify(result, null, 2)
             callback(err, data)
         })

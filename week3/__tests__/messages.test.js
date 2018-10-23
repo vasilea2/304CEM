@@ -13,31 +13,33 @@ const databaseData = {
 const testBody = {
     body : {
         id: 9999,
-        formName: 'John Doe',
-        formEmail: 'JohnDoe@coventry.co.uk',
-        formSite: 'http://JohnDoe.co.uk',
-        formMessage: 'Hello, i\m John Doe'
+        name: 'John Doe',
+        email: 'JohnDoe@coventry.co.uk',
+        url: 'http://JohnDoe.co.uk',
+        message: 'Hello, I\'m John Doe'
     },
 }
 
-const testBodyString = JSON.stringify(testBody)
-
 describe('add', () => {
+
     afterEach( () => messages.deleteById(databaseData, {params: {id: 9999}}, function (err, data) {
         if (err) console.error('Error cleaning up: ' + err)
     }))
 
-    test ('add one item to db', () => {
+    test('add one item to db', () => {
         expect.assertions(1)
         let dataReceived = ''
         messages.add(databaseData, testBody, function (err, data) {
             if (err) console.error(err)
-            let someData = messages.getById(databaseData, testBody, function (err, data) {
+            messages.getById(databaseData, testBody, function (err, data) {
                 if (err) console.error(err)
-                callback(data)
             })
-            console.log(someData)
         })
-        expect(testBodyString).toBe(dataReceived)
+        dataReceived = messages.getById(databaseData, {params: {id: 9999}}, function (err, data) {
+            if (err) console.error('Error retrieving data: ' + err)
+            dataReceived = JSON.parse(data)
+            expect(testBody['body']).toEqual(dataReceived[0])
+        })
     })
+
 })
