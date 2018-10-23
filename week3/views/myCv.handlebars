@@ -167,7 +167,7 @@
     </div>
 
     <div id="formContainer" style="display: none;">
-        <form id="contact" action="http://localhost:8080/process_contact_submission" method="POST" onsubmit="return validateForm()">
+        <form id="contact" action="/api/v1/messages" method="POST" onsubmit="return validateForm()">
             <div class="row">
                     <p class="col-xs-1 col-s-1"></p>
                 <h4>Contact us today, and get reply within 24 hours!</h4>
@@ -181,35 +181,35 @@
 
                 <div class="row">
                     <label class="col-s-3">Name</label>
-                    <input class="col-s-6" name="formName" id="formName" placeholder="Your name" type="text" tabindex="1" required autofocus>
+                    <input class="col-s-6" name="name" id="formName" placeholder="Your name" type="text" tabindex="1" required autofocus>
                 </div>
 
                 <br />
 
                 <div class="row">
                     <label class="col-s-3">Email address</label>
-                    <input class="col-s-6" name="formEmail" id="formEmail" placeholder="Your Email Address" type="email" tabindex="2" required>
+                    <input class="col-s-6" name="email" id="formEmail" placeholder="Your Email Address" type="email" tabindex="2" required>
                 </div>
 
                 <br />
 
                 <div class="row">
                     <label class="col-s-3">Phone number</label>
-                    <input class="col-s-6" name="formPhone" id="formPhone" placeholder="Your Phone Number" type="tel" tabindex="3" required value="00">
+                    <input class="col-s-6" name="phone" id="formPhone" placeholder="Your Phone Number" type="tel" tabindex="3" required value="00">
                 </div>
 
                 <br />
 
                 <div class="row">
                     <label class="col-s-3">Website</label>
-                    <input class="col-s-6" name="formSite" id="formSite" placeholder="Your Web Site starts with http://" type="url" tabindex="4" required>
+                    <input class="col-s-6" name="url" id="formSite" placeholder="Your Web Site starts with http://" type="url" tabindex="4" required>
                 </div>
 
                 <br />
 
                 <div class="row">
                     <label class="col-s-3">Message</label>
-                    <textarea class="col-s-6" name="formMessage" id="formMessage" placeholder="Type your Message Here...." tabindex="5"></textarea>
+                    <textarea class="col-s-6" name="message" id="formMessage" placeholder="Type your Message Here...." tabindex="5"></textarea>
                 </div>
 
                 <br />
